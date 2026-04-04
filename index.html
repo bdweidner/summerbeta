@@ -193,7 +193,7 @@
 
         /* THEME */
         .theme-card { text-align:center; padding:3.5rem 2rem; }
-        .theme-tba { font-family:'Fredoka',sans-serif; font-size:3.5rem; font-weight:700; color:var(--muted); letter-spacing:0.08em; margin:1rem 0; opacity:0.55; }
+        .theme-tba { font-family:'Fredoka',sans-serif; font-size:clamp(1.4rem,8vw,3.5rem); font-weight:700; color:var(--muted); letter-spacing:0.04em; margin:1rem 0; opacity:0.55; word-break:break-word; overflow-wrap:break-word; }
         .theme-note { font-size:0.9rem; color:var(--muted); line-height:1.7; max-width:480px; margin:1rem auto 0; }
         .theme-pill {
             display:inline-flex; align-items:center; gap:0.4rem;
@@ -316,6 +316,7 @@
         @keyframes fadeUp   { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
 
         @media(max-width:680px) {
+            .rules-grid { grid-template-columns:1fr !important; }
             .elig-grid { grid-template-columns:1fr; }
             .judge-grid { grid-template-columns:1fr; }
             .prize-grid { grid-template-columns:1fr; }
@@ -623,7 +624,7 @@
                 <div class="section-eyebrow">// rules</div>
                 <h2 class="section-title">Keep it <em>clean.</em></h2>
                 <!-- Rules reformatted as two-column cards for legibility -->
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.9rem;margin-top:1.4rem;">
+                <div class="rules-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:0.9rem;margin-top:1.4rem;">
 
                     <div style="background:rgba(255,255,255,0.03);border:1.5px solid var(--border);border-radius:var(--r);padding:1.1rem 1.2rem;position:relative;">
                         <div style="font-size:0.68rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:var(--cyan);margin-bottom:0.4rem">Teams</div>
