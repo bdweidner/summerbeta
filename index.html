@@ -816,7 +816,7 @@
                 <div class="section-body">
                     <p>We welcome donations of <strong>any amount;</strong> every dollar goes directly to the student prize pool and keeps this event free and independent.</p>
                     <p>Any donation of <strong style="color:var(--yellow)">$50 or more</strong> earns you the right to submit one theme suggestion for consideration. Final theme selection remains at the organizer&rsquo;s discretion.</p>
-                    <p>For sponsorship inquiries, whether you&rsquo;re a business, studio, or organization interested in supporting Summer Beta, reach out directly at <a href="/cdn-cgi/l/email-protection#76141201131f1218130436111b171f1a5815191b" style="color:var(--yellow);font-weight:700;text-decoration:none"><span class="__cf_email__" data-cfemail="5e3c3a293b373a303b2c1e39333f3732703d3133">[email&#160;protected]</span></a>.</p>
+                    <p>For sponsorship inquiries, whether you&rsquo;re a business, studio, or organization interested in supporting Summer Beta, reach out directly at <a id="email-yellow" href="#" style="color:var(--yellow);font-weight:700;text-decoration:none">[email]</a>.</p>
                     <p style="margin-top:1rem; font-size:0.88rem; opacity:0.72;">Summer Beta is not affiliated with or funded by any university; every dollar comes from people who believe this should exist.</p>
                 </div>
             </div>
@@ -831,7 +831,7 @@
                 <div class="section-eyebrow" style="margin-bottom:0.6rem">// questions?</div>
                 <h2 class="section-title" style="margin-bottom:0.6rem">Get in <em>touch.</em></h2>
                 <p class="section-body" style="max-width:480px;margin:0 auto 0.5rem">Sponsorship inquiries, participation questions, or anything else, reach out directly.</p>
-                <a href="/cdn-cgi/l/email-protection#e18385968488858f8493a1868c80888dcf828e8c" class="contact-email"><span class="__cf_email__" data-cfemail="6a080e1d0f030e040f182a0d070b030644090507">[email&#160;protected]</span></a>
+                <a id="email-contact" href="#" class="contact-email">[email]</a>
             </div>
         </div>
     </section>
@@ -844,7 +844,7 @@
     <p style="margin-top:0.4rem">Organized by Benjamin Weidner. Summer Beta 2026 is the first annual game development competition.</p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 var JAM_START = new Date('2026-05-09T00:00:00');
 var JAM_END   = new Date('2026-08-31T23:59:00');
 function updateCountdown() {
@@ -866,4 +866,28 @@ function updateCountdown() {
     var hours = Math.floor((diff % 86400000) / 3600000);
     var mins  = Math.floor((diff % 3600000)  / 60000);
     var secs  = Math.floor((diff % 60000)    / 1000);
-     document.getElementById('cd-days').te
+         document.getElementById('cd-days').textContent  = String(days).padStart(2,'0');
+    document.getElementById('cd-hours').textContent = String(hours).padStart(2,'0');
+    document.getElementById('cd-mins').textContent  = String(mins).padStart(2,'0');
+    document.getElementById('cd-secs').textContent  = String(secs).padStart(2,'0');
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// Build email addresses via JS so Cloudflare CDN cannot obfuscate them
+(function() {
+    var u = 'bdweidner';
+    var d = 'gmail.com';
+    var e = u + '@' + d;
+    var href = 'mailto:' + e;
+
+    var ec = document.getElementById('email-contact');
+    if (ec) { ec.href = href; ec.textContent = e; }
+
+    var ey = document.getElementById('email-yellow');
+    if (ey) { ey.href = href; ey.textContent = e; }
+})();
+
+</script>
+</body>
+</html>
