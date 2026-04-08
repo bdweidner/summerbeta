@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Summer Beta 2026 — Sponsor Information</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    background: #eae8f0;
+    display: flex;
+    justify-content: center;
+    padding: 32px 16px;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  .doc {
+    width: 100%;
+    max-width: 720px;
+    background: #07060e;
+    border-radius: 18px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .doc::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: radial-gradient(circle, rgba(44,38,88,0.7) 1.2px, transparent 1.2px);
+    background-size: 22px 22px;
+    pointer-events: none; z-index: 0;
+  }
+
+  .top-stripe {
+    height: 6px;
+    background: linear-gradient(90deg, #00D4FF, #FFD100, #FF4D8D, #3DFF80);
+    position: relative; z-index: 1;
+  }
+
+  /* HEADER */
+  .header {
+    position: relative; z-index: 1;
+    padding: 40px 48px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    border-bottom: 1.5px solid #201e3a;
+  }
+
+  .header-left { flex: 1; }
+
+  .eyebrow {
+    font-size: 0.68rem; font-weight: 800; letter-spacing: 0.22em;
+    text-transform: uppercase; color: #00D4FF; margin-bottom: 10px;
+  }
+
+  .title {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 3.2rem; font-weight: 700; line-height: 0.9;
+    color: #EDE8F8;
+    text-shadow: -2px -2px 0 #00D4FF, 2px -2px 0 #00D4FF, -2px 2px 0 #00D4FF, 2px 2px 0 #00D4FF;
+    display: block;
+  }
+
+  .title-sub {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 3.2rem; font-weight: 700; line-height: 1;
+    color: #FFD100; display: block; margin-bottom: 14px;
+  }
+
+  .header-desc {
+    font-size: 0.88rem; color: #a8a6c8; line-height: 1.65; max-width: 380px;
+  }
+
+  .header-desc strong { color: #EDE8F8; }
+
+  /* CONTENT */
+  .content {
+    position: relative; z-index: 1;
+    padding: 32px 48px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  /* SECTION HEADER */
+  .section-head {
+    font-size: 0.65rem; font-weight: 800; letter-spacing: 0.22em;
+    text-transform: uppercase; color: #00D4FF; margin-bottom: 14px;
+  }
+
+  .section-title {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.5rem; font-weight: 700; color: #EDE8F8; margin-bottom: 6px;
+  }
+
+  .section-note {
+    font-size: 0.82rem; color: #a8a6c8; line-height: 1.65; margin-bottom: 16px;
+  }
+
+  .section-note strong { color: #EDE8F8; }
+
+  /* TIER CARD */
+  .tier-card {
+    background: linear-gradient(148deg, rgba(255,255,255,0.055) 0%, transparent 45%), #0e0d1f;
+    border: 1.5px solid #201e3a;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: stretch;
+    margin-bottom: 10px;
+  }
+
+  .tier-accent {
+    width: 5px;
+    flex-shrink: 0;
+  }
+
+  .tier-body {
+    padding: 14px 18px;
+    flex: 1;
+  }
+
+  .tier-top {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+
+  .tier-amount {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.15rem; font-weight: 700;
+  }
+
+  .tier-label {
+    font-size: 0.7rem; font-weight: 800; letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .tier-perks {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .tier-perks li {
+    font-size: 0.82rem; color: #c4c2de; line-height: 1.45;
+    display: flex; gap: 7px; align-items: flex-start;
+  }
+
+  .tier-perks li::before {
+    content: '→'; color: #FFD100; font-weight: 800; flex-shrink: 0;
+  }
+
+  /* COLOR VARIANTS */
+  .t1 .tier-accent { background: #3a3858; }
+  .t1 .tier-amount { color: #a8a6c8; }
+  .t1 .tier-label  { color: #5e5c7a; }
+
+  .t2 .tier-accent { background: #3DFF80; }
+  .t2 .tier-amount { color: #3DFF80; }
+  .t2 .tier-label  { color: #3DFF80; }
+
+  .t3 .tier-accent { background: #00D4FF; }
+  .t3 .tier-amount { color: #00D4FF; }
+  .t3 .tier-label  { color: #00D4FF; }
+
+  .t4 .tier-accent { background: #FFD100; }
+  .t4 .tier-amount { color: #FFD100; }
+  .t4 .tier-label  { color: #FFD100; }
+
+  .t5 .tier-accent { background: #FF8C00; }
+  .t5 .tier-amount { color: #FF8C00; }
+  .t5 .tier-label  { color: #FF8C00; }
+
+  .t6 .tier-accent { background: #FF4D8D; }
+  .t6 .tier-amount { color: #FF4D8D; }
+  .t6 .tier-label  { color: #FF4D8D; }
+
+  .t7 .tier-accent { background: linear-gradient(to bottom, #FFD100, #FF4D8D); }
+  .t7 .tier-amount { color: #FFD100; }
+  .t7 .tier-label  { color: #FFD100; }
+
+  /* DIVIDER */
+  .divider {
+    height: 1.5px;
+    background: linear-gradient(90deg, transparent, #201e3a 20%, #201e3a 80%, transparent);
+  }
+
+  /* NON-PRIZE GRID */
+  .np-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .np-card {
+    background: linear-gradient(148deg, rgba(255,255,255,0.055) 0%, transparent 45%), #0e0d1f;
+    border: 1.5px solid #201e3a;
+    border-radius: 12px;
+    padding: 14px 16px;
+    position: relative;
+  }
+
+  .np-card::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; right: 0; height: 3px;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .np-steam::before   { background: #3DFF80; }
+  .np-venue::before   { background: #FFD100; }
+  .np-vol::before     { background: #00D4FF; }
+  .np-cater::before   { background: #FF4D8D; }
+
+  .np-type {
+    font-size: 0.62rem; font-weight: 800; letter-spacing: 0.16em;
+    text-transform: uppercase; margin-bottom: 4px;
+  }
+
+  .np-steam .np-type   { color: #3DFF80; }
+  .np-venue .np-type   { color: #FFD100; }
+  .np-vol   .np-type   { color: #00D4FF; }
+  .np-cater .np-type   { color: #FF4D8D; }
+
+  .np-title {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1rem; font-weight: 700; color: #EDE8F8; margin-bottom: 4px;
+  }
+
+  .np-desc {
+    font-size: 0.78rem; color: #a8a6c8; line-height: 1.45; margin-bottom: 6px;
+  }
+
+  .np-badge {
+    display: inline-block;
+    font-size: 0.62rem; font-weight: 800; letter-spacing: 0.1em;
+    text-transform: uppercase; color: #00D4FF;
+    background: rgba(0,212,255,0.08);
+    border: 1px solid rgba(0,212,255,0.2);
+    border-radius: 100px; padding: 2px 8px;
+  }
+
+  /* CTA */
+  .cta-box {
+    background: linear-gradient(148deg, rgba(255,255,255,0.055) 0%, transparent 45%), #0e0d1f;
+    border: 1.5px solid rgba(0,212,255,0.3);
+    border-radius: 12px;
+    padding: 22px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    box-shadow: 0 0 20px rgba(0,212,255,0.06);
+  }
+
+  .cta-label {
+    font-size: 0.65rem; font-weight: 800; letter-spacing: 0.2em;
+    text-transform: uppercase; color: #00D4FF; margin-bottom: 6px;
+  }
+
+  .cta-val {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.1rem; font-weight: 700; color: #FFD100;
+  }
+
+  .cta-sub {
+    font-size: 0.78rem; color: #a8a6c8; margin-top: 3px;
+  }
+
+  .bot-stripe {
+    height: 5px;
+    background: linear-gradient(90deg, #3DFF80, #00D4FF, #FFD100, #FF4D8D);
+    position: relative; z-index: 1;
+  }
+
+  @media (max-width: 600px) {
+    .header { flex-direction: column; padding: 28px 24px; }
+    .content { padding: 24px 24px 32px; }
+    .np-grid { grid-template-columns: 1fr; }
+    .cta-box { flex-direction: column; gap: 16px; }
+  }
+</style>
+</head>
+<body>
+<div class="doc">
+  <div class="top-stripe"></div>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-left">
+      <div class="eyebrow">// Sponsorship Opportunities — 2026</div>
+      <span class="title">SUMMER</span>
+      <span class="title-sub">BETA</span>
+      <p class="header-desc">
+        Summer Beta is a <strong>free, independent game development competition</strong> for local high school students, Rowan University students, and Rowan alumni. Organized by Benjamin Weidner, Assistant Teaching Professor at Rowan University.<br><br>
+        We are raising a student prize fund for our inaugural event. <strong>100% of prize fund contributions go directly to the winning developers.</strong>
+      </p>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- PRIZE FUND TIERS -->
+    <div>
+      <div class="section-head">// Prize Fund Contributions</div>
+      <div class="section-title">Support the Student Prize Pool</div>
+      <p class="section-note">All tiers are <strong>cumulative</strong> — each tier includes all benefits from tiers below it.</p>
+
+      <div class="tier-card t1">
+        <div class="tier-accent"></div>
+        <div class="tier-body">
+          <div class="tier-top">
+            <span class="tier-amount">Under $50</span>
+            <span class="tier-label">Individual Donation</span>
+          </div>
+          <ul class="tier-perks">
+            <li>Support for the event and student participants — 100% goes to the prize pool</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tier-card t2">
+        <div class="tier-accent"></div>
+        <div class="tier-body">
+          <div class="tier-top">
+            <span class="tier-amount">$50</span>
+            <span class="tier-label">Theme Contributor</span>
+          </div>
+          <ul class="tier-perks">
+            <li>Submit one theme suggestion for consideration at kickoff</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tier-card t3">
+        <div class="tier-accent"></div>
+        <div class="tier-body">
+          <div class="tier-top">
+            <span class="tier-amount">$100+</span>
+            <span class="tier-label">Community Sponsor</span>
+          </div>
+          <ul class="tier-perks">
+            <li>Social media shoutout</li>
+            <li>Name mentioned on the official Summer Beta website</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tier-card t4">
+        <div class="tier-accent"></div>
+        <div class="tier-body">
+          <div class="tier-top">
+            <span class="tier-amount">$500+</span>
+            <span class="tier-label">Copper Sponsor</span>
+          </div>
+          <ul class="tier-perks">
+            <li>Logo featured on all Summer Beta graphics and materials</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tier-card t5">
+        <div class="tier-accent"></div>
+        <div class="tier-body">
+          <div class="tier-top">
+            <span class="tier-amount">$1,000+</span>
+            <span class="tier-label">Iron Sponsor</span>
+          </div>
+          <ul class="tier-perks">
+            <li>3rd priority logo placement on all graphics</li>
+            <li>Recognition during the presentation event</li>
+            <li>Present the 3rd place award to the winning team</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tier-card t6">
+        <div class="tier-accent"></div>
+        <div class="tier-body">
+          <div class="tier-top">
+            <span class="tier-amount">$2,000+</span>
+            <span class="tier-label">Gold Sponsor</span>
+          </div>
+          <ul class="tier-perks">
+            <li>2nd priority logo placement on all graphics</li>
+            <li>Recognition during the presentation event</li>
+            <li>Present the 2nd place award to the winning team</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tier-card t7">
+        <div class="tier-accent"></div>
+        <div class="tier-body">
+          <div class="tier-top">
+            <span class="tier-amount">$3,000+</span>
+            <span class="tier-label">Diamond Sponsor</span>
+          </div>
+          <ul class="tier-perks">
+            <li>Principal logo placement on all graphics — top billing</li>
+            <li>Recognition during the presentation event</li>
+            <li>Present the 1st place award to the winning team</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="section-note" style="margin-top:10px;">The top three prize fund contributors will receive tiers 5, 6, and 7 respectively if they meet the described thresholds.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- NON-PRIZE CONTRIBUTIONS -->
+    <div>
+      <div class="section-head">// Non-Prize Event Contributions</div>
+      <div class="section-title">Support the Event Itself</div>
+      <p class="section-note">You can contribute to Summer Beta without contributing to the prize fund and still receive sponsorship recognition.</p>
+
+      <div class="np-grid">
+        <div class="np-card np-steam">
+          <div class="np-type">Steam Publishing Fund</div>
+          <div class="np-title">$100 &mdash; Max 3 Sponsors</div>
+          <div class="np-desc">Fund a Steam publishing fee to help a winning team get their game on the platform.</div>
+          <span class="np-badge">Includes Tier 3 Benefits</span>
+        </div>
+
+        <div class="np-card np-venue">
+          <div class="np-type">Venue Hosting</div>
+          <div class="np-title">Provide the Space</div>
+          <div class="np-desc">Host the Summer Beta presentation event and winner announcement at your venue.</div>
+          <span class="np-badge">Includes Tier 4 Benefits</span>
+        </div>
+
+        <div class="np-card np-vol">
+          <div class="np-type">Volunteer</div>
+          <div class="np-title">Event Day Support</div>
+          <div class="np-desc">Assist with logistics, setup, and coordination at the presentation event.</div>
+          <span class="np-badge">Includes Tier 3 Benefits</span>
+        </div>
+
+        <div class="np-card np-cater">
+          <div class="np-type">Catering</div>
+          <div class="np-title">Food &amp; Water for Event</div>
+          <div class="np-desc">Provide food and beverages for participants and attendees at the presentation event.</div>
+          <span class="np-badge">Includes Tier 4 Benefits</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- CTA -->
+    <div class="cta-box">
+      <div>
+        <div class="cta-label">// Get in Touch</div>
+        <div class="cta-val">bdweidner@gmail.com</div>
+        <div class="cta-sub">Reach out directly for any questions or to confirm your contribution.</div>
+      </div>
+      <div>
+        <div class="cta-label">// Official Site</di
